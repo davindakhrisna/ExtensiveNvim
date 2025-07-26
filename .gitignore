@@ -1,0 +1,56 @@
+# Neovim specific ignores
+
+# Lazy.nvim plugin directory
+lazy-lock.json
+
+# Swap files
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+*.backup
+
+# Temporary files
+*.tmp
+.DS_Store
+
+# Node modules (if any plugins install them)
+node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Log files
+*.log
+
+# Cache directories
+.cache/
+.local/
+
+# Mason installations (let Mason handle these)
+# We keep mason-config.lua but ignore installed packages
+# (Mason will reinstall them based on configuration)
+
+# Test files we created during setup
+test-*.js
+test-*.py
+test-*.svelte
+package.json
+package-lock.json
+eslint.config.js
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Editor specific
+.vscode/
+.idea/
+
+# Temporary test files
+*test*
+*Test*

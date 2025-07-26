@@ -1,0 +1,1 @@
+/home/junggo/.config/omarchy/current/theme/neovim.lua

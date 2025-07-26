@@ -1,0 +1,15 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.editor.neo-tree",
+    "lazyvim.plugins.extras.lang.svelte",
+    "lazyvim.plugins.extras.lsp.neoconf",
+    "lazyvim.plugins.extras.ui.dashboard-nvim",
+    "lazyvim.plugins.extras.util.gitui",
+    "lazyvim.plugins.extras.util.rest"
+  ],
+  "install_version": 8,
+  "news": {
+    "NEWS.md": "10960"
+  },
+  "version": 8
+}
