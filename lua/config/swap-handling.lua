@@ -11,7 +11,7 @@ if vim.fn.isdirectory(swap_dir) == 0 then
 end
 
 -- Configure swap file behavior
-vim.opt.swapfile = true  -- Enable swap files (default)
+vim.opt.swapfile = false -- Enable swap files (default)
 vim.opt.updatetime = 250 -- Write swap file after 250ms of inactivity
 
 -- Auto-recover from swap files with confirmation
@@ -21,36 +21,38 @@ vim.api.nvim_create_autocmd("SwapExists", {
     -- Get information about the swap file
     local swap_file = vim.v.swapname
     local original_file = vim.fn.expand("<afile>")
-    
+
     -- Check if another Neovim instance is using the file
     local swap_info = vim.fn.getftime(swap_file)
     if swap_info == -1 then
       -- Swap file doesn't exist or is corrupted, delete it
       vim.fn.delete(swap_file)
-      vim.v.swapchoice = ""  -- Use the file normally
+      vim.v.swapchoice = "" -- Use the file normally
       return
     end
-    
+
     -- Ask user what to do with more helpful options
     local choice = vim.fn.confirm(
-      "Swap file found for " .. vim.fn.fnamemodify(original_file, ":t") .. "\\n" ..
-      "Another instance might be editing this file.\\n" ..
-      "What do you want to do?",
-      "&Open Read-Only\\n&Edit Anyway\\n&Recover\\n&Delete Swap\\n&Quit",
+      "Swap file found for "
+        .. vim.fn.fnamemodify(original_file, ":t")
+        .. "\\n"
+        .. "Another instance might be editing this file.\\n"
+        .. "What do you want to do?",
+      "&Open Read-Only\\&Edit Anyway\\&Recover\\&Delete Swap\\n&Quit",
       1
     )
-    
+
     if choice == 1 then
-      vim.v.swapchoice = "o"  -- Open read-only
+      vim.v.swapchoice = "o" -- Open read-only
     elseif choice == 2 then
-      vim.v.swapchoice = "e"  -- Edit anyway
+      vim.v.swapchoice = "e" -- Edit anyway
     elseif choice == 3 then
-      vim.v.swapchoice = "r"  -- Recover
+      vim.v.swapchoice = "r" -- Recover
     elseif choice == 4 then
       vim.fn.delete(swap_file)
-      vim.v.swapchoice = ""   -- Delete swap and open normally
+      vim.v.swapchoice = "" -- Delete swap and open normally
     else
-      vim.v.swapchoice = "q"  -- Quit
+      vim.v.swapchoice = "q" -- Quit
     end
   end,
 })

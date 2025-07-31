@@ -94,6 +94,46 @@ return {
             },
           },
         },
+        html = {
+          settings = {
+            html = {
+              format = {
+                templating = true,
+                wrapLineLength = 120,
+                wrapAttributes = "auto",
+              },
+              hover = {
+                documentation = true,
+                references = true,
+              },
+            },
+          },
+        },
+        emmet_language_server = {
+          filetypes = {
+            "css",
+            "eruby",
+            "html",
+            "javascript",
+            "javascriptreact",
+            "less",
+            "sass",
+            "scss",
+            "pug",
+            "typescriptreact",
+          },
+          init_options = {
+            includeLanguages = {},
+            excludeLanguages = {},
+            extensionsPath = {},
+            preferences = {},
+            showAbbreviationSuggestions = true,
+            showExpandedAbbreviation = "always",
+            showSuggestionsAsSnippets = false,
+            syntaxProfiles = {},
+            variables = {},
+          },
+        },
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig

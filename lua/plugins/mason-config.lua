@@ -7,6 +7,11 @@ return {
       "eslint-lsp", -- This should only install once
       "stylua",
       "svelte-language-server", -- Svelte support
+      "html-lsp", -- HTML language server
+      "emmet-language-server", -- Emmet support for HTML/CSS
+      "typescript-language-server", -- TypeScript/JavaScript support
+      "tailwindcss-language-server", -- Tailwind CSS support
+      "prettier", -- Code formatter for JS/TS/React
     },
     -- Disable automatic installation of missing servers
     automatic_installation = false,
